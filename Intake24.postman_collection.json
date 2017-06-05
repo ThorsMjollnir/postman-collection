@@ -727,23 +727,6 @@
 						"description": ""
 					},
 					"response": []
-				},
-				{
-					"name": "Request help callback",
-					"request": {
-						"url": "http://localhost:9001/user/foods/en_GB/lookup-in-category?desc=chicken with sweet and sour sauce&n=50",
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-Auth-Token",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJleUp3Y205MmFXUmxja2xFSWpvaVkzSmxaR1Z1ZEdsaGJITWlMQ0p3Y205MmFXUmxja3RsZVNJNkltUmxiVzhqZEdWemRERWlmUT09IiwiaTI0cCI6WyJwcm9jZXNzU3VydmV5OmRlbW8iXSwiaTI0ciI6WyJkZW1vXC9yZXNwb25kZW50Il0sImlzcyI6ImludGFrZTI0IiwiaTI0dCI6ImFjY2VzcyIsImV4cCI6MTQ4OTc0Njk0NSwiaWF0IjoxNDg5MTQ2OTQ1LCJqdGkiOiIwMDNjODVmYTMyYTBmY2EzMjU1M2ZhYTJlNjg5NDVjM2ZmNmJlMzg0NmE1YzZmNzNmNmYyMDcwMjYzZGE1MWRkYTFlODYwNDFhNWIyNDg3NzI1YzU0YTljMmU1MTA2NDYxZjU2NGVhNjM1MWRhNzA2OTNjYTUxMjcwZDRjY2Q0MjYwNjBkMDY3ZTc3MTVmYTE1OTE1ZjgwY2E2MDA2MjNkMWQyODczMmY4OTA1MTFiZjVhYTQ2YWIyMTVhMzZjZTVhYzA0YzA2NzA4MjEwY2U2ZTY1MGNhMjE5OTAwMjg2YzhmYzE5Yzc2NTQzNjE5NWJhNTdiOTJkNzUyYWY0ZDlmIn0.cSjdUe06kUb3YYaIS1zFF3qXUMjj1Fmk5QKxxugQF3M",
-								"description": ""
-							}
-						],
-						"body": {},
-						"description": ""
-					},
-					"response": []
 				}
 			]
 		},
