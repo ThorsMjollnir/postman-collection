@@ -1,0 +1,1249 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Intake24",
+		"_postman_id": "7720fd67-9f64-6b47-e5f2-cf306508f004",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"description": "",
+			"item": [
+				{
+					"name": "Signin with email",
+					"request": {
+						"url": "{{apiBaseUrl}}/signin",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"{{userEmail}}\",\n\t\"password\": \"{{userPassword}}\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Signin with alias",
+					"request": {
+						"url": "{{apiBaseUrl}}/signin/alias",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"surveyId\": \"demo\",\n\t\"userName\": \"test1\",\n\t\"password\": \"pikachu123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Signin with URL token",
+					"request": {
+						"url": "{{apiBaseUrl}}/signin/token/EfYg-nwkqq3nBaen7gBZEkMKW67Ie19r",
+						"method": "POST",
+						"header": [
+							{
+								"key": "//Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"url": "{{apiBaseUrl}}/refresh",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJleUp3Y205MmFXUmxja2xFSWpvaVpXMWhhV3dpTENKd2NtOTJhV1JsY2t0bGVTSTZJbk4xY0hCdmNuUkFhVzUwWVd0bE1qUXVZMjh1ZFdzaWZRPT0iLCJpc3MiOiJpbnRha2UyNCIsImV4cCI6MTY1NDMzNDIzMywidHlwZSI6InJlZnJlc2giLCJpYXQiOjE0OTY2NTQyMzMsInVzZXJJZCI6MSwianRpIjoiM2E3OTVjYTQ3ZGM5NWU2NDBiOTdiMzMyMmY3M2EzOWQzYTc5NGViODRjZjEzMmU5NGNmMjc2MDVlNzI5ODljNTM4NmQ5OTdmNGVhZDI1ODdjNDE3ZDNmMWVlZGQ0ODYyNGUwZmMyNTNiYWIyMDU1OGU0MWJiNmMxZjg2ZGY3MTMxNDk3NjcwNzk3MWUyMGEwNjgyMDI1NjcyMmM1OTg5ZWVkM2JkZTRjZTc4NGIzNjdkOGE5ZTAyMDlkMGM4ZDMwNGI0ZWJhNmM0ZDU4ZTYwOGE5MDZjZGYzZDFmNzE1OTU3ZGQ1NDU5MDFjYzg3NjlkNmY1NmZmZmM2MGQyZDk5ZSJ9.85LhbCf5GhIcujxpRnskDlWqYIN7JzT6VsW6NpwCSeg",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Food database management",
+			"description": "",
+			"item": [
+				{
+					"name": "Upload source image",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/images/source/new",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "",
+									"type": "file",
+									"enabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "test1",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "test2",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Upload source image for as served",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/images/source/new-as-served?setId=test_set_6",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "",
+									"type": "file",
+									"enabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "test1",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "test2",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Upload source image for guide image",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/images/source/new-image-map?id=Gmusselpipi",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"value": "",
+									"type": "file",
+									"enabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "test1",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "test2",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get admin as served",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/portion-size/as-served/test_set_7a",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create as served from uploaded sources",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/portion-size/as-served/new-from-source",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : \"test_set_7\",\n\t\"description\": \"Test Set 7\",\n\t\"images\": [ \n\t\t{\n\t\t\t\"sourceImageId\": \"1701\",\n\t\t\t\"weight\": 10.0\n\t\t},\n\t\t{\n\t\t\t\"sourceImageId\": \"1702\",\n\t\t\t\"weight\": 12.0\n\t\t}\n\t\t]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update as served set",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/portion-size/as-served/test_set_7e",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : \"test_set_7f\",\n\t\"description\": \"Test Set 7f\",\n\t\"images\": [ \n\t\t{\n\t\t\t\"sourceImageId\": \"1701\",\n\t\t\t\"weight\": 1.1\n\t\t},\n\t\t{\n\t\t\t\"sourceImageId\": \"1702\",\n\t\t\t\"weight\": 2.2\n\t\t}\n\t\t]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get source image records",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/images/source?offset=0&limit=10&search=haha",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete source image records",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/images/source/delete",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"1979\"]"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update source image record",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/images/source/1908",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"keywords\": [\"haha1\", \"haha2\"]}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create image map from SVG",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/portion-size/image-map/new-from-svg ",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "baseImage",
+									"value": "",
+									"type": "file",
+									"enabled": true
+								},
+								{
+									"key": "svg",
+									"value": "",
+									"type": "file",
+									"enabled": true
+								},
+								{
+									"key": "imageMapParameters",
+									"value": "{\"id\":\"image_map_test1\",\"description\":\"test 1\",\"objectDescriptions\":{\"1\":\"test1\",\"2\":\"test2\",\"3\":\"test3\", \"4\":\"test4\",\"5\":\"test5\", \"6\":\"test6\"}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "description",
+									"value": "pika",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "objectDescriptions",
+									"value": "",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "objectDescription2",
+									"value": "qwe",
+									"type": "text",
+									"enabled": false
+								},
+								{
+									"key": "objectDescription3",
+									"value": "qwe",
+									"type": "text",
+									"enabled": false
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Respondent food data",
+			"description": "",
+			"item": [
+				{
+					"name": "Split food description",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/foods/{{locale}}/split-description?desc=chicken with sweet and sour sauce",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lookup food",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/foods/{{locale}}/lookup?desc=fish in batter&limit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lookup food in category",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/foods/{{locale}}/lookup-in-category?desc=fish&category=CODB",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get root categories",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/categories/{{locale}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get category contents",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/categories/{{locale}}/BRDR",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get food data",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/foods/{{locale}}/CIAB",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get food data with source trace",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/foods/{{locale}}/CIAB/with-sources",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get food composition data",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/foods/{{locale}}/CIAB/composition?weight=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get nutrient types list",
+					"request": {
+						"url": "{{apiBaseUrl}}/admin/nutrient-types",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get food brand names",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/foods/{{locale}}/MLAS/brand-names",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get associated foods",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/foods/{{locale}}/CIAB/associated-foods",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get weight portion size method",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/portion-size/weight",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get as served set",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/portion-size/as-served/bans",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get image map",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/portion-size/image-maps/Gbur",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"Gbur\", \"Gbur\"]"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get guide image",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/portion-size/guide-image/Gbur",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get drinkware set",
+					"request": {
+						"url": "{{apiBaseUrl}}/user/portion-size/drinkware/mugs",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Generate user",
+					"request": {
+						"url": "http://localhost:9001/user/foods/en_GB/lookup-in-category?desc=chicken with sweet and sour sauce&n=50",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJleUp3Y205MmFXUmxja2xFSWpvaVkzSmxaR1Z1ZEdsaGJITWlMQ0p3Y205MmFXUmxja3RsZVNJNkltUmxiVzhqZEdWemRERWlmUT09IiwiaTI0cCI6WyJwcm9jZXNzU3VydmV5OmRlbW8iXSwiaTI0ciI6WyJkZW1vXC9yZXNwb25kZW50Il0sImlzcyI6ImludGFrZTI0IiwiaTI0dCI6ImFjY2VzcyIsImV4cCI6MTQ4OTc0Njk0NSwiaWF0IjoxNDg5MTQ2OTQ1LCJqdGkiOiIwMDNjODVmYTMyYTBmY2EzMjU1M2ZhYTJlNjg5NDVjM2ZmNmJlMzg0NmE1YzZmNzNmNmYyMDcwMjYzZGE1MWRkYTFlODYwNDFhNWIyNDg3NzI1YzU0YTljMmU1MTA2NDYxZjU2NGVhNjM1MWRhNzA2OTNjYTUxMjcwZDRjY2Q0MjYwNjBkMDY3ZTc3MTVmYTE1OTE1ZjgwY2E2MDA2MjNkMWQyODczMmY4OTA1MTFiZjVhYTQ2YWIyMTVhMzZjZTVhYzA0YzA2NzA4MjEwY2U2ZTY1MGNhMjE5OTAwMjg2YzhmYzE5Yzc2NTQzNjE5NWJhNTdiOTJkNzUyYWY0ZDlmIn0.cSjdUe06kUb3YYaIS1zFF3qXUMjj1Fmk5QKxxugQF3M",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Request help callback",
+					"request": {
+						"url": "http://localhost:9001/user/foods/en_GB/lookup-in-category?desc=chicken with sweet and sour sauce&n=50",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJleUp3Y205MmFXUmxja2xFSWpvaVkzSmxaR1Z1ZEdsaGJITWlMQ0p3Y205MmFXUmxja3RsZVNJNkltUmxiVzhqZEdWemRERWlmUT09IiwiaTI0cCI6WyJwcm9jZXNzU3VydmV5OmRlbW8iXSwiaTI0ciI6WyJkZW1vXC9yZXNwb25kZW50Il0sImlzcyI6ImludGFrZTI0IiwiaTI0dCI6ImFjY2VzcyIsImV4cCI6MTQ4OTc0Njk0NSwiaWF0IjoxNDg5MTQ2OTQ1LCJqdGkiOiIwMDNjODVmYTMyYTBmY2EzMjU1M2ZhYTJlNjg5NDVjM2ZmNmJlMzg0NmE1YzZmNzNmNmYyMDcwMjYzZGE1MWRkYTFlODYwNDFhNWIyNDg3NzI1YzU0YTljMmU1MTA2NDYxZjU2NGVhNjM1MWRhNzA2OTNjYTUxMjcwZDRjY2Q0MjYwNjBkMDY3ZTc3MTVmYTE1OTE1ZjgwY2E2MDA2MjNkMWQyODczMmY4OTA1MTFiZjVhYTQ2YWIyMTVhMzZjZTVhYzA0YzA2NzA4MjEwY2U2ZTY1MGNhMjE5OTAwMjg2YzhmYzE5Yzc2NTQzNjE5NWJhNTdiOTJkNzUyYWY0ZDlmIn0.cSjdUe06kUb3YYaIS1zFF3qXUMjj1Fmk5QKxxugQF3M",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Surveys",
+			"description": "",
+			"item": [
+				{
+					"name": "List surveys",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Validate survey ID",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/validate-id?id=kotak",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create survey",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : \"test\",\n\t\"schemeId\" : \"default\",\n\t\"localeId\" : \"en_GB\",\n\t\"state\" : 2,\n\t\"startDate\" : \"2014-06-29T12:00:00+01:00\",\n\t\"endDate\" : \"2018-07-31T12:00:00+01:00\",\n\t\"allowGeneratedUsers\" : false,\n\t\"externalFollowUpURL\" : [],\n\t\"supportEmail\" : \"test@test.com\",\n\t\"description\" : []\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get survey",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update survey",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"demo\",\n  \"schemeId\": \"default\",\n  \"localeId\": \"en_GB\",\n  \"state\": 2,\n  \"startDate\": \"2014-06-29T12:00:00+01:00\",\n  \"endDate\": \"2018-07-31T12:00:00+01:00\",\n  \"suspensionReason\": [\n    \"\"\n  ],\n  \"allowGeneratedUsers\": true,\n  \"externalFollowUpURL\": [],\n  \"supportEmail\": \"support@intake24.co.uk\",\n  \"description\": []\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get survey submissions",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/submissions?dateFrom=2016-09-30T06:00:00.000Z&dateTo=2018-05-31T06:00:00.000Z&offset=0&limit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get survey submissions as CSV",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/submissions/csv?dateFrom=2016-09-30T06:00:00.000Z&dateTo=2018-05-31T06:00:00.000Z",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get my survey submissions",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/my-submissions",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get survey public parameters",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/public-parameters",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get survey parameters",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/parameters",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get survey follow-up URL",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/follow-up",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Generate user",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/generate-user",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Submit survey",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/submissions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Request support callback",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/request-callback",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test\",\n\t\"phone\": \"123123123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List survey staff users",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/users/staff?offset=0&limit=100",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userInfo\": {\n\t\t\"name\": [\"Tomáš Berdych\"],\n\t\t\"email\": [\"tomas2@di-test.com\"],\n\t\t\"phone\": [],\n\t\t\"roles\": [],\n\t\t\"customFields\": {}\n\t},\n\t\"password\": \"qweqwe123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List survey respondents",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/users/respondents?offset=0&limit=100",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userInfo\": {\n\t\t\"name\": [\"Tomáš Berdych\"],\n\t\t\"email\": [\"tomas2@di-test.com\"],\n\t\t\"phone\": [],\n\t\t\"roles\": [],\n\t\t\"customFields\": {}\n\t},\n\t\"password\": \"qweqwe123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Upload respondents CSV",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/users/respondents/upload-csv",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create respondents with physical data",
+					"request": {
+						"url": "{{apiBaseUrl}}/surveys/demo/users/respondents/with-physical-data",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"users\": [\n\t\t{\n\t\t\"externalId\": \"test1\", \n\t\t\"name\": [\"Test 1\"], \n\t\t\"email\": [\"durak@durak.durak\"],\n\t\t\"phone\": [\"12345\"],\n\t\t\"sex\": [\"male\"], \n\t\t\"yearOfBirth\": [1234], \n\t\t\"weight\": [80], \n\t\t\"height\": [180]\n\t\t}\n\t\n\t\t]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Find users",
+					"request": {
+						"url": "{{apiBaseUrl}}/users?q=tomas&limit=10",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : \"test_set_7\",\n\t\"description\": \"Test Set 7\",\n\t\"images\": [ \n\t\t{\n\t\t\t\"sourceImageId\": \"1701\",\n\t\t\t\"weight\": 10.0\n\t\t},\n\t\t{\n\t\t\t\"sourceImageId\": \"1702\",\n\t\t\t\"weight\": 12.0\n\t\t}\n\t\t]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"url": "{{apiBaseUrl}}/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userInfo\": {\n\t\t\"name\": [\"Test Staff\"],\n\t\t\"email\": [\"staff1@di-test.com\"],\n\t\t\"phone\": [],\n\t\t\"roles\": [\"C4L/staff\"],\n\t\t\"customFields\": {}\n\t},\n\t\"password\": \"qweqwe123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete users",
+					"request": {
+						"url": "{{apiBaseUrl}}/users/12345",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userIds\": [162, 173, 179]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get my physical data",
+					"request": {
+						"url": "{{apiBaseUrl}}/users/my-physical-data ",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{accessToken}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
